@@ -43,20 +43,32 @@ export async function generateStaticParams() {
   return source.generateParams()
 }
 
-export async function generateMetadata(props: {
-  params: Promise<{ slug: string[] }>
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug?: string[] }>
 }): Promise<Metadata> {
-  const params = await props.params
-  const page = source.getPage(params.slug)
+  const slug = (await params).slug
+  const page = source.getPage(slug)
 
   if (!page) notFound()
 
   const description =
     page.data.description ??
-    "AnnUI is a collection of reusable components that you can copy and paste into your web apps."
+    "A collection of reusable React components that you can copy and paste into your web apps."
 
   return {
     title: page.data.title,
     description,
+    openGraph: {
+      title: page.data.title,
+      description,
+      type: "article",
+    },
+    twitter: {
+      card: "summary",
+      title: page.data.title,
+      description,
+    },
   }
 }

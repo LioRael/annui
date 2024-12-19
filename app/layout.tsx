@@ -10,24 +10,19 @@ import { cn } from "@/registry/default/lib/utils"
 
 export const metadata: Metadata = {
   title: {
-    default: "AnnUI - Modern React Component Library",
-    template: "%s | AnnUI",
+    template: "%s - AnnUI",
+    default: "AnnUI - Beautiful React Components",
   },
   description:
-    "AnnUI is a collection of re-usable components that you can copy and paste into your web apps.",
+    "A collection of customizable and accessible React components built with Radix UI and Tailwind CSS",
   keywords: [
-    "Next.js",
     "React",
-    "Component Library",
+    "Components",
     "UI Library",
-    "Tailwind CSS",
-    "Server Components",
     "Radix UI",
-    "TypeScript",
-    "Frontend Development",
-    "Web Development",
-    "UI Components",
-    "Design System",
+    "Tailwind CSS",
+    "Accessible",
+    "Customizable",
   ],
   authors: [
     {
@@ -35,24 +30,22 @@ export const metadata: Metadata = {
       url: "https://github.com/liorael",
     },
   ],
-  creator: "liorael",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://www.annui.org",
-    title: "AnnUI - Modern React Component Library",
+    url: "https://annui.org",
+    title: "AnnUI - Beautiful React Components",
     description:
-      "AnnUI is a collection of reusable components that you can copy and paste into your web apps.",
+      "A collection of customizable and accessible React components built with Radix UI and Tailwind CSS",
     siteName: "AnnUI",
   },
   twitter: {
     card: "summary_large_image",
-    title: "AnnUI - Modern React Component Library",
+    title: "AnnUI - Beautiful React Components",
     description:
-      "AnnUI is a collection of reusable components that you can copy and paste into your web apps.",
-    creator: "@liorael",
+      "A collection of customizable and accessible React components built with Radix UI and Tailwind CSS",
+    creator: "@lio_rael",
   },
-  metadataBase: new URL("https://www.annui.org"),
 }
 
 export default function Layout({ children }: { children: ReactNode }) {
