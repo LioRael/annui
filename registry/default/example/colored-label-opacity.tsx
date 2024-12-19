@@ -1,6 +1,6 @@
 import { ColoredLabel } from "@/registry/default/annui/colored-label"
 
-export default function ColoredLabelColor() {
+export default function ColoredLabelOpacity() {
   return (
     <div className="flex flex-wrap gap-2">
       <ColoredLabel color="#A294F9" textOpacity={0.5}>

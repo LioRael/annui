@@ -298,4 +298,15 @@ export const examples: Registry = [
       },
     ],
   },
+  {
+    name: "colored-label-border",
+    type: "registry:example",
+    registryDependencies: ["colored-label"],
+    files: [
+      {
+        path: "example/colored-label-border.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ]

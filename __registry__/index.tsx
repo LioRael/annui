@@ -613,6 +613,22 @@ export const Index: Record<string, any> = {
       subcategory: "",
       chunks: []
     },
+    "colored-label-border": {
+      name: "colored-label-border",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["colored-label"],
+      files: [{
+        path: "registry/default/example/colored-label-border.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/example/colored-label-border.tsx")),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: []
+    },
     "utils": {
       name: "utils",
       description: "",

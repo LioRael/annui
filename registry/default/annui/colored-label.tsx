@@ -9,8 +9,11 @@ interface ColoredLabelProps extends React.ComponentPropsWithoutRef<"div"> {
   darkColor?: string
   bgOpacity?: number
   textOpacity?: number
+  borderOpacity?: number
   darkBgOpacity?: number
   darkTextOpacity?: number
+  darkBorderOpacity?: number
+  variant?: "background" | "border"
 }
 
 const ColoredLabel = React.forwardRef<
@@ -25,9 +28,12 @@ const ColoredLabel = React.forwardRef<
       darkColor = color,
       bgOpacity = 0.1,
       textOpacity = 1,
+      borderOpacity = 0.3,
       darkBgOpacity = bgOpacity,
       darkTextOpacity = textOpacity,
+      darkBorderOpacity = borderOpacity,
       asChild,
+      variant = "background",
       ...props
     },
     ref
@@ -38,7 +44,11 @@ const ColoredLabel = React.forwardRef<
       <Comp
         ref={ref}
         className={cn(
-          "rounded-md text-xs px-1.5 py-0.5 w-fit font-medium bg-[var(--bg-color)] text-[var(--text-color)] dark:bg-[var(--dark-bg-color)] dark:text-[var(--dark-text-color)]",
+          "rounded-md text-xs px-1.5 py-0.5 w-fit font-medium text-[var(--text-color)] dark:text-[var(--dark-text-color)]",
+          variant === "border" &&
+            "border-[var(--border-color)] dark:border-[var(--dark-border-color)] border",
+          variant === "background" &&
+            "bg-[var(--bg-color)] dark:bg-[var(--dark-bg-color)]",
           className
         )}
         style={
@@ -46,11 +56,19 @@ const ColoredLabel = React.forwardRef<
             "--bg-color": color
               ? colord(color).alpha(bgOpacity).toRgbString()
               : undefined,
-            "--text-color": color
-              ? colord(color).alpha(textOpacity).toRgbString()
-              : undefined,
             "--dark-bg-color": darkColor
               ? colord(darkColor).alpha(darkBgOpacity).toRgbString()
+              : undefined,
+
+            "--border-color": color
+              ? colord(color).alpha(borderOpacity).toRgbString()
+              : undefined,
+            "--dark-border-color": darkColor
+              ? colord(darkColor).alpha(darkBorderOpacity).toRgbString()
+              : undefined,
+
+            "--text-color": color
+              ? colord(color).alpha(textOpacity).toRgbString()
               : undefined,
             "--dark-text-color": darkColor
               ? colord(darkColor).alpha(darkTextOpacity).toRgbString()
