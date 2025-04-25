@@ -15,6 +15,10 @@ export const Index: Record<string, any> = {
       path: "registry/lib/cn.ts",
       type: "registry:lib",
       target: ""
+    },{
+      path: "registry/lib/theme.tsx",
+      type: "registry:lib",
+      target: ""
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/lib/cn.ts")
@@ -35,6 +39,23 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/lib/cn.ts")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "theme": {
+    name: "theme",
+    description: "",
+    type: "registry:lib",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/lib/theme.tsx",
+      type: "registry:lib",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/lib/theme.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),

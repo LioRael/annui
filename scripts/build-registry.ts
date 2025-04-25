@@ -12,8 +12,8 @@ import { ui } from "../registry/registry-ui";
 const DEPRECATED_ITEMS: string[] = [];
 
 const registry = {
-	name: "shadcn/ui",
-	homepage: "https://ui.shadcn.com",
+	name: "annui",
+	homepage: "https://annui.org",
 	items: z.array(registryItemSchema).parse(
 		[...style, ...lib, ...ui].filter((item) => {
 			return !DEPRECATED_ITEMS.includes(item.name);

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "theme",
+  "type": "registry:lib",
+  "files": [
+    {
+      "path": "registry/lib/theme.tsx",
+      "content": "\"use client\";\n\nimport { createContext, useContext } from \"react\";\n\nexport interface UseThemeOptions<Colors = string> {\n  theme?: \"light\" | \"dark\";\n  color?: Colors;\n}\n\nexport function useTheme(options: UseThemeOptions) {\n  return {\n    \"data-theme\": options.theme,\n    \"data-color\": options.color,\n  };\n}\n\nexport const ThemeContext = createContext<UseThemeOptions>({});\n\nexport function ThemeProvider({\n  children,\n  ...props\n}: React.PropsWithChildren<UseThemeOptions>) {\n  return (\n    <ThemeContext.Provider value={props}>{children}</ThemeContext.Provider>\n  );\n}\n\nexport function useThemeContext<Colors>() {\n  const context = useContext(ThemeContext);\n  if (context === undefined) {\n    throw new Error(\"useThemeContext must be used within a ThemeProvider\");\n  }\n  return context as UseThemeOptions<Colors>;\n}\n",
+      "type": "registry:lib"
+    }
+  ]
+}
