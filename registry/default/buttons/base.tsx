@@ -31,7 +31,7 @@ const variants = cva(
 				primary:
 					"[--button:var(--color-primary-600)] [--button-hover:var(--color-primary-700)] [--button-stroke:var(--color-primary-600)] [--button-lighter:var(--color-primary-50)] [--button-lighter-hover:var(--color-primary-100)]",
 				balance:
-					"[--button:var(--color-gray-950)] [--button-hover:var(--color-gray-800)] [--button-stroke:var(--color-gray-600)] [--button-lighter:var(--color-gray-50)] [--button-lighter-hover:var(--color-gray-100)]",
+					"[--button:var(--color-default-950)] [--button-hover:var(--color-default-800)] [--button-stroke:var(--color-default-600)] [--button-lighter:var(--color-default-50)] [--button-lighter-hover:var(--color-default-100)]",
 				success: "",
 				error: "",
 				warning: "",
