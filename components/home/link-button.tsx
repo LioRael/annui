@@ -16,7 +16,7 @@ export default function LinkButton({
 			href={href}
 			className={clsx(
 				className,
-				"inline-block rounded-4xl bg-gray-1000 px-4 py-2 text-sm/6 font-semibold text-white dark:bg-gray-200 hover:bg-gray-800 dark:hover:bg-gray-300 transition-colors",
+				"inline-block rounded-4xl px-4 py-2 text-sm/6 font-semibold text-white bg-default-1000 hover:bg-default-800 dark:bg-default-200 dark:hover:bg-default-300 transition-colors",
 			)}
 		>
 			{children}

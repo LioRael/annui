@@ -17,7 +17,7 @@ function ThemeToggleButton(props: React.ComponentProps<typeof Radio.Root>) {
 						layout
 						layoutId="theme-toggle-indicator"
 						transition={{ duration: 0.2 }}
-						className="absolute inset-0 -z-10 rounded-full data-checked:bg-white data-checked:ring data-checked:inset-ring data-checked:ring-gray-950/10 data-checked:inset-ring-white/10 data-unchecked:hidden dark:data-checked:bg-gray-700 dark:data-checked:text-white dark:data-checked:ring-transparent"
+						className="absolute inset-0 -z-10 rounded-full data-checked:bg-white data-checked:ring data-checked:inset-ring data-checked:ring-gray-950/10 data-checked:inset-ring-white/10 data-unchecked:hidden dark:data-checked:bg-neutral-700 dark:data-checked:text-white dark:data-checked:ring-transparent"
 					/>
 				}
 			/>

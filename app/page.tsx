@@ -5,7 +5,7 @@ import Hero from "@/components/home/hero";
 
 export default function Home() {
 	return (
-		<div className="max-w-screen overflow-x-hidden bg-background-50">
+		<div className="max-w-screen overflow-x-hidden">
 			<div className="fixed inset-x-0 top-0 z-10 border-b border-black/5 dark:border-white/10">
 				<Header />
 			</div>

@@ -99,7 +99,7 @@ export default function Layout({ children }: React.PropsWithChildren) {
 	return (
 		<html
 			lang="en"
-			className={`${inter.variable} ${plexMono.variable} ${source.variable} ${ubuntuMono.variable} antialiased dark:bg-gray-950`}
+			className={`${inter.variable} ${plexMono.variable} ${source.variable} ${ubuntuMono.variable} antialiased bg-background-200`}
 			suppressHydrationWarning
 		>
 			<head>
