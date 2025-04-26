@@ -99,3 +99,10 @@ function ButtonRoot(
 }
 
 function ButtonIcon() {}
+
+export { variants as buttonVariants };
+
+export const Button = {
+	Root: ButtonRoot,
+	Icon: ButtonIcon,
+};
