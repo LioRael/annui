@@ -1,19 +1,11 @@
 import type { RegistryItem } from "shadcn/registry";
 
 export const defaultStyle: RegistryItem = {
-	name: "default",
-	type: "registry:theme",
+	name: "index",
+	type: "registry:style",
 	dependencies: ["clsx", "tailwind-merge", "tailwind-variants"],
-	files: [
-		{
-			path: "registry/lib/cn.ts",
-			type: "registry:lib",
-		},
-		{
-			path: "registry/lib/theme.tsx",
-			type: "registry:lib",
-		},
-	],
+	registryDependencies: ["cn", "theme", "context", "resolve-classname"],
+	files: [],
 	cssVars: {
 		light: {
 			"color-primary-50": "var(--color-purple-50)",

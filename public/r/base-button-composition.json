@@ -1,12 +1,12 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "base-button-composition",
-  "type": "registry:example",
-  "files": [
-    {
-      "path": "registry/default/example/base-button-composition.tsx",
-      "content": "import { Button } from \"@/registry/default/buttons/base\";\nimport Link from \"next/link\";\n\nexport default function BaseButtonComposition() {\n\treturn <Button.Root render={<Link href=\"/\" />}>I'm a Link</Button.Root>;\n}\n",
-      "type": "registry:example"
-    }
-  ]
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "base-button-composition",
+	"type": "registry:example",
+	"files": [
+		{
+			"path": "registry/default/example/base-button-composition.tsx",
+			"content": "import { Button } from \"@/registry/default/buttons/base\";\nimport Link from \"next/link\";\n\nexport default function BaseButtonComposition() {\n\treturn <Button.Root render={<Link href=\"/\" />}>I'm a Link</Button.Root>;\n}\n",
+			"type": "registry:example"
+		}
+	]
 }

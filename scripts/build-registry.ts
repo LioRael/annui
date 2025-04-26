@@ -15,20 +15,7 @@ const registry = {
 	name: "annui",
 	homepage: "https://annui.org",
 	items: z.array(registryItemSchema).parse(
-		[
-			{
-				name: "index",
-				type: "registry:style",
-				dependencies: ["tailwind-variants", "lucide-react"],
-				registryDependencies: ["cn", "theme", "context"],
-				cssVars: {},
-				files: [],
-			},
-			...styles,
-			...lib,
-			...ui,
-			...examples,
-		].filter((item) => {
+		[...styles, ...lib, ...ui, ...examples].filter((item) => {
 			return !DEPRECATED_ITEMS.includes(item.name);
 		}),
 	),

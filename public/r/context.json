@@ -1,12 +1,12 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "context",
-  "type": "registry:lib",
-  "files": [
-    {
-      "path": "registry/lib/context.ts",
-      "content": "\"use client\";\n\nimport React from \"react\";\n\nconst createContextHook = <T>(\n\tcontext: React.Context<T | undefined>,\n\thookName: string,\n\tproviderName: string,\n) => {\n\treturn () => {\n\t\tconst ctx = React.useContext(context);\n\t\tif (!ctx) {\n\t\t\tthrow new Error(`${hookName} must be used within a ${providerName}`);\n\t\t}\n\t\treturn ctx;\n\t};\n};\n\nconst createContext = <T>(defaultValue: T) => {\n\tconst Context = React.createContext<T | undefined>(defaultValue);\n\tconst useContext = createContextHook(Context, \"useContext\", \"Context\");\n\n\treturn [Context.Provider, useContext] as const;\n};\n\nexport { createContextHook, createContext };\n",
-      "type": "registry:lib"
-    }
-  ]
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "context",
+	"type": "registry:lib",
+	"files": [
+		{
+			"path": "registry/lib/context.ts",
+			"content": "\"use client\";\n\nimport React from \"react\";\n\nconst createContextHook = <T>(\n\tcontext: React.Context<T | undefined>,\n\thookName: string,\n\tproviderName: string,\n) => {\n\treturn () => {\n\t\tconst ctx = React.useContext(context);\n\t\tif (!ctx) {\n\t\t\tthrow new Error(`${hookName} must be used within a ${providerName}`);\n\t\t}\n\t\treturn ctx;\n\t};\n};\n\nconst createContext = <T>(defaultValue: T) => {\n\tconst Context = React.createContext<T | undefined>(defaultValue);\n\tconst useContext = createContextHook(Context, \"useContext\", \"Context\");\n\n\treturn [Context.Provider, useContext] as const;\n};\n\nexport { createContextHook, createContext };\n",
+			"type": "registry:lib"
+		}
+	]
 }

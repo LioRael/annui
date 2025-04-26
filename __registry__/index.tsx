@@ -10,30 +10,9 @@ export const Index: Record<string, any> = {
     name: "index",
     description: "",
     type: "registry:style",
-    registryDependencies: ["cn","theme","context"],
+    registryDependencies: ["cn","theme","context","resolve-classname"],
     files: [],
     component: null,
-    meta: undefined,
-  },
-  "default": {
-    name: "default",
-    description: "",
-    type: "registry:theme",
-    registryDependencies: undefined,
-    files: [{
-      path: "registry/lib/cn.ts",
-      type: "registry:lib",
-      target: ""
-    },{
-      path: "registry/lib/theme.tsx",
-      type: "registry:lib",
-      target: ""
-    }],
-    component: React.lazy(async () => {
-      const mod = await import("@/registry/lib/cn.ts")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
-      return { default: mod.default || mod[exportName] }
-    }),
     meta: undefined,
   },
   "cn": {

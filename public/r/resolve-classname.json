@@ -1,12 +1,12 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "resolve-classname",
-  "type": "registry:lib",
-  "files": [
-    {
-      "path": "registry/lib/resolve-classname.ts",
-      "content": "export function resolveClassName<T>(\n\tclassName: undefined | string | ((state: T) => string),\n) {\n\treturn (state: T) => {\n\t\tif (typeof className === \"function\") {\n\t\t\treturn className(state);\n\t\t}\n\t\treturn className;\n\t};\n}\n",
-      "type": "registry:lib"
-    }
-  ]
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "resolve-classname",
+	"type": "registry:lib",
+	"files": [
+		{
+			"path": "registry/lib/resolve-classname.ts",
+			"content": "export function resolveClassName<T>(\n\tclassName: undefined | string | ((state: T) => string),\n) {\n\treturn (state: T) => {\n\t\tif (typeof className === \"function\") {\n\t\t\treturn className(state);\n\t\t}\n\t\treturn className;\n\t};\n}\n",
+			"type": "registry:lib"
+		}
+	]
 }

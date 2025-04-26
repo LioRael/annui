@@ -8,8 +8,8 @@ import {
 	SettingsIcon,
 } from "lucide-react";
 
-import { MenuA } from "@/registry/default/menus/menu-a";
 import { Button } from "@/registry/default/buttons/base";
+import { MenuA } from "@/registry/default/menus/menu-a";
 
 export function MenuADemo() {
 	return (

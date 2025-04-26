@@ -1,12 +1,12 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "hover-expand-button-sizes",
-  "type": "registry:example",
-  "files": [
-    {
-      "path": "registry/default/example/hover-expand-button-sizes.tsx",
-      "content": "\"use client\";\n\nimport { PlusIcon } from \"lucide-react\";\n\nimport { HoverExpandButton } from \"@/registry/default/buttons/hover-expand-button\";\n\nexport function HoverExpandButtonSizes() {\n\treturn (\n\t\t<div className=\"flex gap-4\">\n\t\t\t<HoverExpandButton.Root size=\"sm\">\n\t\t\t\t<HoverExpandButton.Icon render={<PlusIcon />} />\n\t\t\t\t<HoverExpandButton.Text>Button</HoverExpandButton.Text>\n\t\t\t</HoverExpandButton.Root>\n\t\t\t<HoverExpandButton.Root size=\"md\">\n\t\t\t\t<HoverExpandButton.Icon render={<PlusIcon />} />\n\t\t\t\t<HoverExpandButton.Text>Button</HoverExpandButton.Text>\n\t\t\t</HoverExpandButton.Root>\n\t\t\t<HoverExpandButton.Root size=\"lg\">\n\t\t\t\t<HoverExpandButton.Icon render={<PlusIcon />} />\n\t\t\t\t<HoverExpandButton.Text>Button</HoverExpandButton.Text>\n\t\t\t</HoverExpandButton.Root>\n\t\t</div>\n\t);\n}\n",
-      "type": "registry:example"
-    }
-  ]
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "hover-expand-button-sizes",
+	"type": "registry:example",
+	"files": [
+		{
+			"path": "registry/default/example/hover-expand-button-sizes.tsx",
+			"content": "\"use client\";\n\nimport { PlusIcon } from \"lucide-react\";\n\nimport { HoverExpandButton } from \"@/registry/default/buttons/hover-expand-button\";\n\nexport function HoverExpandButtonSizes() {\n\treturn (\n\t\t<div className=\"flex gap-4\">\n\t\t\t<HoverExpandButton.Root size=\"sm\">\n\t\t\t\t<HoverExpandButton.Icon render={<PlusIcon />} />\n\t\t\t\t<HoverExpandButton.Text>Button</HoverExpandButton.Text>\n\t\t\t</HoverExpandButton.Root>\n\t\t\t<HoverExpandButton.Root size=\"md\">\n\t\t\t\t<HoverExpandButton.Icon render={<PlusIcon />} />\n\t\t\t\t<HoverExpandButton.Text>Button</HoverExpandButton.Text>\n\t\t\t</HoverExpandButton.Root>\n\t\t\t<HoverExpandButton.Root size=\"lg\">\n\t\t\t\t<HoverExpandButton.Icon render={<PlusIcon />} />\n\t\t\t\t<HoverExpandButton.Text>Button</HoverExpandButton.Text>\n\t\t\t</HoverExpandButton.Root>\n\t\t</div>\n\t);\n}\n",
+			"type": "registry:example"
+		}
+	]
 }

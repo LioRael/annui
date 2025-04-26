@@ -4,10 +4,10 @@ import { Menu as MenuPrimitive } from "@base-ui-components/react/menu";
 import { ChevronRightIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { motion, type MotionProps } from "motion/react";
-import { useTheme, type UseThemeOptions } from "@/registry/lib/theme";
-import { tv } from "tailwind-variants";
 import { resolveClassName } from "@/registry/lib/resolve-classname";
+import { type UseThemeOptions, useTheme } from "@/registry/lib/theme";
+import { type MotionProps, motion } from "motion/react";
+import { tv } from "tailwind-variants";
 
 const animationVariants = {
 	closed: {
