@@ -1,12 +1,12 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "base-button-icons",
-	"type": "registry:example",
-	"files": [
-		{
-			"path": "registry/default/example/base-button-icons.tsx",
-			"content": "import { Button } from \"@/registry/default/buttons/base\";\nimport { PlusIcon } from \"lucide-react\";\n\nexport default function BaseButtonIcons() {\n\treturn (\n\t\t<Button.Root>\n\t\t\t<Button.Icon render={<PlusIcon />} />\n\t\t\tPrimary\n\t\t\t<Button.Icon render={<PlusIcon />} />\n\t\t</Button.Root>\n\t);\n}\n",
-			"type": "registry:example"
-		}
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "base-button-icons",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "registry/default/example/base-button-icons.tsx",
+      "content": "import { Button } from \"@/registry/default/buttons/base\";\nimport { PlusIcon } from \"lucide-react\";\n\nexport default function BaseButtonIcons() {\n\treturn (\n\t\t<Button.Root>\n\t\t\t<Button.Icon render={<PlusIcon />} />\n\t\t\tPrimary\n\t\t\t<Button.Icon render={<PlusIcon />} />\n\t\t</Button.Root>\n\t);\n}\n",
+      "type": "registry:example"
+    }
+  ]
 }

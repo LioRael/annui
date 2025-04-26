@@ -1,12 +1,12 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "hover-expand-button-demo",
-	"type": "registry:example",
-	"files": [
-		{
-			"path": "registry/default/example/hover-expand-button-demo.tsx",
-			"content": "\"use client\";\n\nimport { PlusIcon } from \"lucide-react\";\n\nimport { HoverExpandButton } from \"@/registry/default/buttons/hover-expand-button\";\n\nexport function HoverExpandButtonDemo() {\n\treturn (\n\t\t<HoverExpandButton.Root>\n\t\t\t<HoverExpandButton.Icon render={<PlusIcon />} />\n\t\t\t<HoverExpandButton.Text>Button</HoverExpandButton.Text>\n\t\t</HoverExpandButton.Root>\n\t);\n}\n",
-			"type": "registry:example"
-		}
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hover-expand-button-demo",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "registry/default/example/hover-expand-button-demo.tsx",
+      "content": "\"use client\";\n\nimport { PlusIcon } from \"lucide-react\";\n\nimport { HoverExpandButton } from \"@/registry/default/buttons/hover-expand-button\";\n\nexport function HoverExpandButtonDemo() {\n\treturn (\n\t\t<HoverExpandButton.Root>\n\t\t\t<HoverExpandButton.Icon render={<PlusIcon />} />\n\t\t\t<HoverExpandButton.Text>Button</HoverExpandButton.Text>\n\t\t</HoverExpandButton.Root>\n\t);\n}\n",
+      "type": "registry:example"
+    }
+  ]
 }

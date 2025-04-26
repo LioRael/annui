@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs-context",
+  "type": "registry:lib",
+  "description": "Context for tabs components",
+  "files": [
+    {
+      "path": "registry/default/tabs/context.ts",
+      "content": "import { createContext } from \"@/registry/lib/context\";\n\ninterface TabsContextValue {\n\tactiveTab: string | undefined;\n\tsetActiveTab: (value: string) => void;\n}\n\ninterface TabContextValue {\n\tvalue: string | undefined;\n}\n\nconst [TabsProvider, useTabsContext] = createContext<TabsContextValue>({\n\tactiveTab: undefined,\n\tsetActiveTab: () => {},\n});\n\nconst [TabProvider, useTabContext] = createContext<TabContextValue>({\n\tvalue: undefined,\n});\n\nexport { TabsProvider, TabProvider, useTabsContext, useTabContext };\n",
+      "type": "registry:lib"
+    }
+  ]
+}

@@ -1,15 +1,19 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "hover-expand-button",
-	"type": "registry:component",
-	"description": "A button component with hover expand",
-	"dependencies": ["motion"],
-	"registryDependencies": ["base-button"],
-	"files": [
-		{
-			"path": "registry/default/buttons/hover-expand-button.tsx",
-			"content": "\"use client\";\n\nimport { AnimatePresence, motion } from \"motion/react\";\nimport * as React from \"react\";\n\nimport { cn } from \"@/registry/lib/cn\";\nimport { createContext } from \"@/registry/lib/context\";\nimport { Button } from \"./base\";\nimport { useButtonContext } from \"./context\";\n\nfunction HoverExpandButtonRoot({\n\tclassName,\n\tchildren,\n\t...props\n}: React.ComponentPropsWithoutRef<typeof Button.Root>) {\n\tconst [isHover, setIsHover] = React.useState(false);\n\n\treturn (\n\t\t<IconHoverButtonProvider value={{ isHover }}>\n\t\t\t<Button.Root\n\t\t\t\tclassName={cn(\"gap-0\", className)}\n\t\t\t\tonMouseEnter={() => setIsHover(true)}\n\t\t\t\tonMouseLeave={() => setIsHover(false)}\n\t\t\t\t{...props}\n\t\t\t>\n\t\t\t\t{children}\n\t\t\t</Button.Root>\n\t\t</IconHoverButtonProvider>\n\t);\n}\n\nfunction HoverExpandButtonText({\n\tclassName,\n\tspanClassName,\n\tchildren,\n\t...props\n}: React.ComponentPropsWithoutRef<typeof motion.div> & {\n\tspanClassName?: string;\n\tchildren?: React.ReactNode;\n}) {\n\tconst { isHover } = useIconHoverButtonContext();\n\tconst { size } = useButtonContext();\n\n\tconst marginMap = {\n\t\tsm: \"6px\",\n\t\tmd: \"8px\",\n\t\tlg: \"10px\",\n\t};\n\n\tconst variants = {\n\t\tinitial: {\n\t\t\twidth: 0,\n\t\t\topacity: 0,\n\t\t\tmarginLeft: 0,\n\t\t},\n\t\tanimate: {\n\t\t\twidth: \"auto\",\n\t\t\topacity: 1,\n\t\t\tmarginLeft: marginMap[size],\n\t\t},\n\t};\n\n\treturn (\n\t\t<AnimatePresence>\n\t\t\t{isHover && (\n\t\t\t\t<motion.div\n\t\t\t\t\tvariants={variants}\n\t\t\t\t\tinitial=\"initial\"\n\t\t\t\t\tanimate=\"animate\"\n\t\t\t\t\texit=\"initial\"\n\t\t\t\t\ttransition={{ duration: 0.4, type: \"spring\", bounce: 0 }}\n\t\t\t\t\tclassName={cn(\"overflow-hidden\", className)}\n\t\t\t\t\t{...props}\n\t\t\t\t>\n\t\t\t\t\t<span className={spanClassName}>{children}</span>\n\t\t\t\t</motion.div>\n\t\t\t)}\n\t\t</AnimatePresence>\n\t);\n}\n\ninterface ButtonContextValue {\n\tisHover: boolean;\n}\n\nconst [IconHoverButtonProvider, useIconHoverButtonContext] =\n\tcreateContext<ButtonContextValue>({\n\t\tisHover: false,\n\t});\n\nexport const HoverExpandButton = {\n\tRoot: HoverExpandButtonRoot,\n\tIcon: Button.Icon,\n\tText: HoverExpandButtonText,\n};\nexport { useIconHoverButtonContext };\n",
-			"type": "registry:component"
-		}
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hover-expand-button",
+  "type": "registry:component",
+  "description": "A button component with hover expand",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "base-button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/buttons/hover-expand-button.tsx",
+      "content": "\"use client\";\n\nimport { AnimatePresence, motion } from \"motion/react\";\nimport * as React from \"react\";\n\nimport { cn } from \"@/registry/lib/cn\";\nimport { createContext } from \"@/registry/lib/context\";\nimport { Button } from \"./base\";\nimport { useButtonContext } from \"./context\";\n\nfunction HoverExpandButtonRoot({\n\tclassName,\n\tchildren,\n\t...props\n}: React.ComponentPropsWithoutRef<typeof Button.Root>) {\n\tconst [isHover, setIsHover] = React.useState(false);\n\n\treturn (\n\t\t<IconHoverButtonProvider value={{ isHover }}>\n\t\t\t<Button.Root\n\t\t\t\tclassName={cn(\"gap-0\", className)}\n\t\t\t\tonMouseEnter={() => setIsHover(true)}\n\t\t\t\tonMouseLeave={() => setIsHover(false)}\n\t\t\t\t{...props}\n\t\t\t>\n\t\t\t\t{children}\n\t\t\t</Button.Root>\n\t\t</IconHoverButtonProvider>\n\t);\n}\n\nfunction HoverExpandButtonText({\n\tclassName,\n\tspanClassName,\n\tchildren,\n\t...props\n}: React.ComponentPropsWithoutRef<typeof motion.div> & {\n\tspanClassName?: string;\n\tchildren?: React.ReactNode;\n}) {\n\tconst { isHover } = useIconHoverButtonContext();\n\tconst { size } = useButtonContext();\n\n\tconst marginMap = {\n\t\tsm: \"6px\",\n\t\tmd: \"8px\",\n\t\tlg: \"10px\",\n\t};\n\n\tconst variants = {\n\t\tinitial: {\n\t\t\twidth: 0,\n\t\t\topacity: 0,\n\t\t\tmarginLeft: 0,\n\t\t},\n\t\tanimate: {\n\t\t\twidth: \"auto\",\n\t\t\topacity: 1,\n\t\t\tmarginLeft: marginMap[size],\n\t\t},\n\t};\n\n\treturn (\n\t\t<AnimatePresence>\n\t\t\t{isHover && (\n\t\t\t\t<motion.div\n\t\t\t\t\tvariants={variants}\n\t\t\t\t\tinitial=\"initial\"\n\t\t\t\t\tanimate=\"animate\"\n\t\t\t\t\texit=\"initial\"\n\t\t\t\t\ttransition={{ duration: 0.4, type: \"spring\", bounce: 0 }}\n\t\t\t\t\tclassName={cn(\"overflow-hidden\", className)}\n\t\t\t\t\t{...props}\n\t\t\t\t>\n\t\t\t\t\t<span className={spanClassName}>{children}</span>\n\t\t\t\t</motion.div>\n\t\t\t)}\n\t\t</AnimatePresence>\n\t);\n}\n\ninterface ButtonContextValue {\n\tisHover: boolean;\n}\n\nconst [IconHoverButtonProvider, useIconHoverButtonContext] =\n\tcreateContext<ButtonContextValue>({\n\t\tisHover: false,\n\t});\n\nexport const HoverExpandButton = {\n\tRoot: HoverExpandButtonRoot,\n\tIcon: Button.Icon,\n\tText: HoverExpandButtonText,\n};\nexport { useIconHoverButtonContext };\n",
+      "type": "registry:component"
+    }
+  ]
 }

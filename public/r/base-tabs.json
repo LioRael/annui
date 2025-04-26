@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "base-tabs",
+  "type": "registry:component",
+  "description": "A tabs component",
+  "registryDependencies": [
+    "tabs-context"
+  ],
+  "files": [
+    {
+      "path": "registry/default/tabs/base.tsx",
+      "content": "import { Tabs as TabsPrimitive } from \"@base-ui-components/react/tabs\";\nimport { useControlled } from \"@base-ui-components/react/utils\";\n",
+      "type": "registry:component"
+    }
+  ]
+}

@@ -1,12 +1,12 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "base-button-colors",
-	"type": "registry:example",
-	"files": [
-		{
-			"path": "registry/default/example/base-button-colors.tsx",
-			"content": "import { Button } from \"@/registry/default/buttons/base\";\n\nexport default function BaseButtonColors() {\n\treturn (\n\t\t<div className=\"flex gap-4\">\n\t\t\t<Button.Root color=\"primary\">Primary</Button.Root>\n\t\t\t<Button.Root color=\"default\">Default</Button.Root>\n\t\t\t<Button.Root color=\"success\">Success</Button.Root>\n\t\t\t<Button.Root color=\"warning\">Warning</Button.Root>\n\t\t\t<Button.Root color=\"error\">Error</Button.Root>\n\t\t</div>\n\t);\n}\n",
-			"type": "registry:example"
-		}
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "base-button-colors",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "registry/default/example/base-button-colors.tsx",
+      "content": "import { Button } from \"@/registry/default/buttons/base\";\n\nexport default function BaseButtonColors() {\n\treturn (\n\t\t<div className=\"flex gap-4\">\n\t\t\t<Button.Root color=\"primary\">Primary</Button.Root>\n\t\t\t<Button.Root color=\"default\">Default</Button.Root>\n\t\t\t<Button.Root color=\"success\">Success</Button.Root>\n\t\t\t<Button.Root color=\"warning\">Warning</Button.Root>\n\t\t\t<Button.Root color=\"error\">Error</Button.Root>\n\t\t</div>\n\t);\n}\n",
+      "type": "registry:example"
+    }
+  ]
 }

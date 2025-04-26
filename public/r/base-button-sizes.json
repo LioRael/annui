@@ -1,12 +1,12 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "base-button-sizes",
-	"type": "registry:example",
-	"files": [
-		{
-			"path": "registry/default/example/base-button-sizes.tsx",
-			"content": "import { Button } from \"@/registry/default/buttons/base\";\n\nexport default function BaseButtonSizes() {\n\treturn (\n\t\t<div className=\"flex gap-4\">\n\t\t\t<Button.Root size=\"sm\">Small</Button.Root>\n\t\t\t<Button.Root size=\"md\">Medium</Button.Root>\n\t\t\t<Button.Root size=\"lg\">Large</Button.Root>\n\t\t</div>\n\t);\n}\n",
-			"type": "registry:example"
-		}
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "base-button-sizes",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "registry/default/example/base-button-sizes.tsx",
+      "content": "import { Button } from \"@/registry/default/buttons/base\";\n\nexport default function BaseButtonSizes() {\n\treturn (\n\t\t<div className=\"flex gap-4\">\n\t\t\t<Button.Root size=\"sm\">Small</Button.Root>\n\t\t\t<Button.Root size=\"md\">Medium</Button.Root>\n\t\t\t<Button.Root size=\"lg\">Large</Button.Root>\n\t\t</div>\n\t);\n}\n",
+      "type": "registry:example"
+    }
+  ]
 }

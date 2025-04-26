@@ -1,12 +1,12 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "theme",
-	"type": "registry:lib",
-	"files": [
-		{
-			"path": "registry/lib/theme.tsx",
-			"content": "\"use client\";\n\nimport { createContext, useContext } from \"react\";\n\nexport interface UseThemeOptions<Colors = string> {\n\ttheme?: \"light\" | \"dark\";\n\tcolor?: Colors;\n}\n\nexport function useTheme(options: UseThemeOptions) {\n\treturn {\n\t\t\"data-theme\": options.theme,\n\t\t\"data-color\": options.color,\n\t};\n}\n\nexport const ThemeContext = createContext<UseThemeOptions>({});\n\nexport function ThemeProvider({\n\tchildren,\n\t...props\n}: React.PropsWithChildren<UseThemeOptions>) {\n\treturn (\n\t\t<ThemeContext.Provider value={props}>{children}</ThemeContext.Provider>\n\t);\n}\n\nexport function useThemeContext<Colors>() {\n\tconst context = useContext(ThemeContext);\n\tif (context === undefined) {\n\t\tthrow new Error(\"useThemeContext must be used within a ThemeProvider\");\n\t}\n\treturn context as UseThemeOptions<Colors>;\n}\n",
-			"type": "registry:lib"
-		}
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "theme",
+  "type": "registry:lib",
+  "files": [
+    {
+      "path": "registry/lib/theme.tsx",
+      "content": "\"use client\";\n\nimport { createContext, useContext } from \"react\";\n\nexport interface UseThemeOptions<Colors = string> {\n\ttheme?: \"light\" | \"dark\";\n\tcolor?: Colors;\n}\n\nexport function useTheme(options: UseThemeOptions) {\n\treturn {\n\t\t\"data-theme\": options.theme,\n\t\t\"data-color\": options.color,\n\t};\n}\n\nexport const ThemeContext = createContext<UseThemeOptions>({});\n\nexport function ThemeProvider({\n\tchildren,\n\t...props\n}: React.PropsWithChildren<UseThemeOptions>) {\n\treturn (\n\t\t<ThemeContext.Provider value={props}>{children}</ThemeContext.Provider>\n\t);\n}\n\nexport function useThemeContext<Colors>() {\n\tconst context = useContext(ThemeContext);\n\tif (context === undefined) {\n\t\tthrow new Error(\"useThemeContext must be used within a ThemeProvider\");\n\t}\n\treturn context as UseThemeOptions<Colors>;\n}\n",
+      "type": "registry:lib"
+    }
+  ]
 }

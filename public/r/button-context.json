@@ -1,13 +1,13 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "button-context",
-	"type": "registry:lib",
-	"description": "Context for button components",
-	"files": [
-		{
-			"path": "registry/default/buttons/context.tsx",
-			"content": "import { createContext } from \"@/registry/lib/context\";\n\ntype ButtonColors = \"primary\" | \"default\" | \"success\" | \"warning\" | \"error\";\ntype ButtonSizes = \"sm\" | \"md\" | \"lg\";\ntype ButtonVariants = \"filled\" | \"stroke\" | \"lighter\" | \"ghost\";\ntype ButtonContextType = {\n\ttheme: \"light\" | \"dark\";\n\tcolor: ButtonColors;\n\tsize: ButtonSizes;\n\tvariant: ButtonVariants;\n};\n\nconst [ButtonContextProvider, useButtonContext] =\n\tcreateContext<ButtonContextType>({\n\t\ttheme: \"light\",\n\t\tcolor: \"default\",\n\t\tsize: \"md\",\n\t\tvariant: \"filled\",\n\t});\n\nexport { ButtonContextProvider, useButtonContext };\n\nexport type { ButtonContextType, ButtonColors, ButtonSizes, ButtonVariants };\n",
-			"type": "registry:lib"
-		}
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-context",
+  "type": "registry:lib",
+  "description": "Context for button components",
+  "files": [
+    {
+      "path": "registry/default/buttons/context.ts",
+      "content": "import { createContext } from \"@/registry/lib/context\";\n\ntype ButtonColors = \"primary\" | \"default\" | \"success\" | \"warning\" | \"error\";\ntype ButtonSizes = \"sm\" | \"md\" | \"lg\";\ntype ButtonVariants = \"filled\" | \"stroke\" | \"lighter\" | \"ghost\";\ntype ButtonContextType = {\n\ttheme: \"light\" | \"dark\";\n\tcolor: ButtonColors;\n\tsize: ButtonSizes;\n\tvariant: ButtonVariants;\n};\n\nconst [ButtonContextProvider, useButtonContext] =\n\tcreateContext<ButtonContextType>({\n\t\ttheme: \"light\",\n\t\tcolor: \"default\",\n\t\tsize: \"md\",\n\t\tvariant: \"filled\",\n\t});\n\nexport { ButtonContextProvider, useButtonContext };\n\nexport type { ButtonContextType, ButtonColors, ButtonSizes, ButtonVariants };\n",
+      "type": "registry:lib"
+    }
+  ]
 }

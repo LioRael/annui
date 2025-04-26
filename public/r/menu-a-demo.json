@@ -1,12 +1,12 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "menu-a-demo",
-	"type": "registry:example",
-	"files": [
-		{
-			"path": "registry/default/example/menu-a-demo.tsx",
-			"content": "\"use client\";\n\nimport {\n\tChevronDownIcon,\n\tChevronRightIcon,\n\tHomeIcon,\n\tLogOutIcon,\n\tSettingsIcon,\n} from \"lucide-react\";\n\nimport { MenuA } from \"@/registry/default/menus/menu-a\";\nimport { Button } from \"@/registry/default/buttons/base\";\n\nexport function MenuADemo() {\n\treturn (\n\t\t<MenuA.Root>\n\t\t\t<MenuA.Trigger render={<Button.Root />}>\n\t\t\t\t<Button.Icon render={<ChevronDownIcon />} />\n\t\t\t\tOpen\n\t\t\t</MenuA.Trigger>\n\t\t\t<MenuA.Content>\n\t\t\t\t<MenuA.Item>\n\t\t\t\t\t<MenuA.ItemIcon>\n\t\t\t\t\t\t<HomeIcon />\n\t\t\t\t\t</MenuA.ItemIcon>\n\t\t\t\t\t<MenuA.ItemTitle>Home</MenuA.ItemTitle>\n\t\t\t\t\t<MenuA.ItemDescription>Home page</MenuA.ItemDescription>\n\t\t\t\t</MenuA.Item>\n\t\t\t\t<MenuA.Item>\n\t\t\t\t\t<MenuA.ItemIcon>\n\t\t\t\t\t\t<SettingsIcon />\n\t\t\t\t\t</MenuA.ItemIcon>\n\t\t\t\t\t<MenuA.ItemTitle>Settings</MenuA.ItemTitle>\n\t\t\t\t\t<MenuA.ItemDescription>Settings page</MenuA.ItemDescription>\n\t\t\t\t</MenuA.Item>\n\t\t\t\t<MenuA.Item>\n\t\t\t\t\t<MenuA.ItemIcon>\n\t\t\t\t\t\t<ChevronRightIcon />\n\t\t\t\t\t</MenuA.ItemIcon>\n\t\t\t\t\t<MenuA.ItemTitle>More</MenuA.ItemTitle>\n\t\t\t\t\t<MenuA.ItemDescription>More page</MenuA.ItemDescription>\n\t\t\t\t</MenuA.Item>\n\t\t\t\t<MenuA.Separator />\n\t\t\t\t<MenuA.Item>\n\t\t\t\t\t<MenuA.ItemIcon>\n\t\t\t\t\t\t<LogOutIcon />\n\t\t\t\t\t</MenuA.ItemIcon>\n\t\t\t\t\t<MenuA.ItemTitle>Logout</MenuA.ItemTitle>\n\t\t\t\t\t<MenuA.ItemDescription>Logout page</MenuA.ItemDescription>\n\t\t\t\t</MenuA.Item>\n\t\t\t</MenuA.Content>\n\t\t</MenuA.Root>\n\t);\n}\n",
-			"type": "registry:example"
-		}
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "menu-a-demo",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "registry/default/example/menu-a-demo.tsx",
+      "content": "\"use client\";\n\nimport {\n\tChevronDownIcon,\n\tChevronRightIcon,\n\tHomeIcon,\n\tLogOutIcon,\n\tSettingsIcon,\n} from \"lucide-react\";\n\nimport { Button } from \"@/registry/default/buttons/base\";\nimport { MenuA } from \"@/registry/default/menus/menu-a\";\n\nexport function MenuADemo() {\n\treturn (\n\t\t<MenuA.Root>\n\t\t\t<MenuA.Trigger render={<Button.Root />}>\n\t\t\t\tOpen\n\t\t\t\t<Button.Icon render={<ChevronDownIcon />} />\n\t\t\t</MenuA.Trigger>\n\t\t\t<MenuA.Content>\n\t\t\t\t<MenuA.Item>\n\t\t\t\t\t<MenuA.ItemIcon>\n\t\t\t\t\t\t<HomeIcon />\n\t\t\t\t\t</MenuA.ItemIcon>\n\t\t\t\t\t<MenuA.ItemTitle>Home</MenuA.ItemTitle>\n\t\t\t\t\t<MenuA.ItemDescription>Home page</MenuA.ItemDescription>\n\t\t\t\t</MenuA.Item>\n\t\t\t\t<MenuA.Item>\n\t\t\t\t\t<MenuA.ItemIcon>\n\t\t\t\t\t\t<SettingsIcon />\n\t\t\t\t\t</MenuA.ItemIcon>\n\t\t\t\t\t<MenuA.ItemTitle>Settings</MenuA.ItemTitle>\n\t\t\t\t\t<MenuA.ItemDescription>Settings page</MenuA.ItemDescription>\n\t\t\t\t</MenuA.Item>\n\t\t\t\t<MenuA.Item>\n\t\t\t\t\t<MenuA.ItemIcon>\n\t\t\t\t\t\t<ChevronRightIcon />\n\t\t\t\t\t</MenuA.ItemIcon>\n\t\t\t\t\t<MenuA.ItemTitle>More</MenuA.ItemTitle>\n\t\t\t\t\t<MenuA.ItemDescription>More page</MenuA.ItemDescription>\n\t\t\t\t</MenuA.Item>\n\t\t\t\t<MenuA.Separator />\n\t\t\t\t<MenuA.Item>\n\t\t\t\t\t<MenuA.ItemIcon>\n\t\t\t\t\t\t<LogOutIcon />\n\t\t\t\t\t</MenuA.ItemIcon>\n\t\t\t\t\t<MenuA.ItemTitle>Logout</MenuA.ItemTitle>\n\t\t\t\t\t<MenuA.ItemDescription>Logout page</MenuA.ItemDescription>\n\t\t\t\t</MenuA.Item>\n\t\t\t</MenuA.Content>\n\t\t</MenuA.Root>\n\t);\n}\n",
+      "type": "registry:example"
+    }
+  ]
 }
