@@ -65,6 +65,15 @@ const variants = tv({
 			},
 		},
 	},
+	compoundVariants: [
+		{
+			variant: "filled",
+			color: "default",
+			class: {
+				root: "dark:text-default-100",
+			},
+		},
+	],
 	defaultVariants: {
 		variant: "filled",
 		size: "md",
