@@ -15,8 +15,8 @@ export function MenuADemo() {
 	return (
 		<MenuA.Root>
 			<MenuA.Trigger render={<Button.Root />}>
-				<Button.Icon render={<ChevronDownIcon />} />
 				Open
+				<Button.Icon render={<ChevronDownIcon />} />
 			</MenuA.Trigger>
 			<MenuA.Content>
 				<MenuA.Item>

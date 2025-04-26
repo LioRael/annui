@@ -7,7 +7,7 @@ export const defaultButtons: Registry["items"] = [
 		type: "registry:lib",
 		files: [
 			{
-				path: "registry/default/buttons/context.tsx",
+				path: "registry/default/buttons/context.ts",
 				type: "registry:lib",
 			},
 		],

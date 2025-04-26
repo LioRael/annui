@@ -6,7 +6,12 @@ import { AnimatePresence, motion } from "motion/react";
 import * as React from "react";
 
 import { cn } from "@/registry/lib/cn";
-import { createContext } from "@/registry/lib/context";
+import {
+	TabProvider,
+	TabsProvider,
+	useTabContext,
+	useTabsContext,
+} from "./context";
 
 const Tabs = React.forwardRef<
 	React.ComponentRef<typeof TabsPrimitive.Root>,
@@ -137,24 +142,6 @@ const TabsPanel = React.forwardRef<
 ));
 TabsPanel.displayName = TabsPrimitive.Panel.displayName;
 
-interface TabsContextValue {
-	activeTab: string | undefined;
-	setActiveTab: (value: string) => void;
-}
-
-interface TabContextValue {
-	value: string | undefined;
-}
-
-const [TabsProvider, useTabsContext] = createContext<TabsContextValue>({
-	activeTab: undefined,
-	setActiveTab: () => {},
-});
-
-const [TabProvider, useTabContext] = createContext<TabContextValue>({
-	value: undefined,
-});
-
 export const FocusTabs = {
 	Root: Tabs,
 	List: TabsList,
@@ -163,5 +150,3 @@ export const FocusTabs = {
 	TabText: TabsTabText,
 	Panel: TabsPanel,
 };
-
-export { useTabsContext, useTabContext };
