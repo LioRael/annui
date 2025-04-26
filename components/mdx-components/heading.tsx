@@ -1,6 +1,6 @@
 import { LinkIcon } from "lucide-react";
 
-import { cn } from "@/lib/cn";
+import { cn } from "@/registry/lib/cn";
 
 type Types = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 type HeadingProps<T extends Types> = Omit<

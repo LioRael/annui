@@ -4,7 +4,7 @@ import { mergeProps, useRender } from "@base-ui-components/react";
 import React from "react";
 import { tv } from "tailwind-variants";
 
-import { cn } from "@/lib/cn";
+import { cn } from "@/registry/lib/cn";
 
 function CornerDecoration({
 	position,

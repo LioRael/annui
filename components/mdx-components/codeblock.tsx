@@ -3,7 +3,7 @@
 import { ScrollArea } from "@base-ui-components/react";
 import { forwardRef, useCallback, useRef } from "react";
 
-import { cn } from "@/lib/cn";
+import { cn } from "@/registry/lib/cn";
 
 import type { HTMLAttributes, ReactNode } from "react";
 

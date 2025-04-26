@@ -6,7 +6,7 @@ import { RandomPromo } from "@/components/docs/promo";
 import { SectionTitle } from "@/components/docs/section-title";
 import TableOfContents from "@/components/docs/table-of-contents";
 import { mdxComponents } from "@/components/mdx-components";
-import { cn } from "@/lib/cn";
+import { cn } from "@/registry/lib/cn";
 
 import type { TOCEntry } from "@/components/docs/table-of-contents";
 import type { TableOfContents as TableOfContentsType } from "fumadocs-core/server";

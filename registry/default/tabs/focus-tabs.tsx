@@ -5,7 +5,7 @@ import { useControlled } from "@base-ui-components/react/utils";
 import { AnimatePresence, motion } from "motion/react";
 import * as React from "react";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/registry/lib/cn";
 import { createContext } from "@/registry/lib/context";
 
 const Tabs = React.forwardRef<

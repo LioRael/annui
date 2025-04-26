@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import Link from "next/link";
 
-import { cn } from "@/lib/cn";
+import { cn } from "@/registry/lib/cn";
 
 import { ThemeToggle } from "./theme-toggle";
 
