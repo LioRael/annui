@@ -43,7 +43,7 @@ export function CategorySelect() {
 		>
 			<Select.Trigger
 				aria-label="Version"
-				className="flex items-center gap-0.5 transition-colors rounded-2xl bg-gray-950/5 py-0.5 pr-1.5 pl-2.5 text-xs/5 font-medium text-gray-950 tabular-nums outline-none select-none hover:bg-gray-950/7.5 data-active:bg-gray-950/7.5 dark:bg-white/10 dark:text-white dark:hover:bg-white/12.5 dark:data-active:bg-white/12.5"
+				className="flex items-center gap-0.5 transition-colors rounded-2xl bg-default-950/5 py-0.5 pr-1.5 pl-2.5 text-xs/5 font-medium text-default-950 tabular-nums outline-none select-none hover:bg-default-950/7.5 data-active:bg-default-950/7.5 dark:bg-white/10 dark:text-white dark:hover:bg-white/12.5 dark:data-active:bg-white/12.5"
 			>
 				<span className="capitalize">{activeCategory}</span>
 				<Select.Icon>
@@ -63,7 +63,7 @@ export function CategorySelect() {
 								transition={{
 									duration: open ? 0.2 : 0.1,
 								}}
-								className="mt-2 w-28 rounded-xl bg-white p-1 py-1 text-xs/7 font-medium text-gray-950 tabular-nums shadow-sm ring ring-gray-950/5 outline-none dark:bg-gray-950 dark:text-white dark:ring-white/10 origin-top-left"
+								className="mt-2 w-28 rounded-xl bg-white p-1 py-1 text-xs/7 font-medium text-default-950 tabular-nums shadow-sm ring ring-default-950/5 outline-none dark:bg-default-50 dark:text-white dark:ring-white/10 origin-top-left"
 							/>
 						}
 					>
