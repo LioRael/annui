@@ -98,3 +98,82 @@ export const CodeBlock = forwardRef<HTMLElement, CodeBlockProps>(
 	},
 );
 CodeBlock.displayName = "CodeBlock";
+
+export const PreviewCodeBlock = forwardRef<
+	HTMLElement,
+	CodeBlockProps & {
+		preview: ReactNode;
+	}
+>(
+	(
+		{
+			title,
+			children,
+			allowCopy = true,
+			icon,
+			viewportProps,
+			preview,
+			...props
+		},
+		ref,
+	) => {
+		const areaRef = useRef<HTMLDivElement>(null);
+		const onCopy = useCallback(() => {
+			const pre = areaRef.current?.getElementsByTagName("pre").item(0);
+
+			if (!pre) return;
+
+			const clone = pre.cloneNode(true) as HTMLElement;
+			for (const node of clone.querySelectorAll(".nd-copy-ignore")) {
+				node.remove();
+			}
+
+			void navigator.clipboard.writeText(clone.textContent ?? "");
+		}, []);
+
+		return (
+			<div className="not-prose isolate my-2">
+				<figure
+					ref={ref}
+					{...props}
+					className={cn(
+						"flex flex-col gap-1 rounded-xl bg-gray-950/5 p-1 inset-ring inset-ring-gray-950/5 dark:bg-white/10 dark:inset-ring-white/10",
+						props.className,
+					)}
+				>
+					{preview && (
+						<div className="overflow-auto rounded-lg bg-white outline outline-white/5 dark:bg-gray-950/50 p-8">
+							{preview}
+						</div>
+					)}
+					{children && (
+						<div>
+							<div className="rounded-xl bg-gray-950 in-data-stack:mt-0 in-data-stack:rounded-none in-[figure]:-mx-1 in-[figure]:-mb-1 in-data-stack:[:first-child>&]:rounded-t-xl in-data-stack:[:first-child>&]:*:rounded-t-xl in-data-stack:[:last-child>&]:rounded-b-xl in-data-stack:[:last-child>&]:*:rounded-b-xl">
+								<div className="rounded-xl p-1 text-sm scheme-dark in-data-stack:rounded-none dark:bg-white/5 dark:inset-ring dark:inset-ring-white/10 in-data-stack:dark:inset-ring-0">
+									{title && (
+										<div className="px-3 pt-0.5 pb-1.5 text-xs/5 text-gray-400 dark:text-white/50">
+											{title}
+										</div>
+									)}
+									<ScrollArea.Root ref={areaRef} dir="ltr">
+										<ScrollArea.Viewport
+											{...viewportProps}
+											className={cn(
+												"max-h-[300px] *:flex *:*:max-w-none *:*:shrink-0 *:*:grow *:overflow-auto *:rounded-lg *:bg-white/10! *:p-5 *:inset-ring *:inset-ring-white/10 dark:*:bg-white/5! dark:*:inset-ring-white/5 **:[.line]:isolate **:[.line]:not-last:min-h-[1lh]",
+												viewportProps?.className,
+											)}
+										>
+											{children}
+										</ScrollArea.Viewport>
+										<ScrollArea.Scrollbar orientation="horizontal" />
+									</ScrollArea.Root>
+								</div>
+							</div>
+						</div>
+					)}
+				</figure>
+			</div>
+		);
+	},
+);
+CodeBlock.displayName = "CodeBlock";

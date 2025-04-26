@@ -1,3 +1,4 @@
+import { rehypeComponent } from "@/lib/rehype-component";
 import { defineCollection, defineConfig } from "@content-collections/core";
 import {
 	createDocSchema,
@@ -10,9 +11,10 @@ import { z } from "zod";
 import type { TransformOptions } from "@fumadocs/content-collections/configuration";
 
 const mdxOptions = {
-	rehypePlugins: [
-		[rehypeCode, { themes: { light: "vesper", dark: "vesper" } }],
-	],
+	rehypeCodeOptions: {
+		themes: { light: "vesper", dark: "vesper" },
+	},
+	rehypePlugins: () => [rehypeComponent],
 } satisfies TransformOptions;
 
 const docs = defineCollection({

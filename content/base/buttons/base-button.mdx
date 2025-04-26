@@ -1,0 +1,49 @@
+---
+title: Base Button
+description: |
+  AnnUI provides a base button component that can be used to create a button.
+---
+
+<ComponentPreview name="base-button-demo" />
+
+## Installation
+
+```bash
+npm install @base-ui-components/react
+```
+
+## Usage
+
+```tsx
+import { Button } from "@base-ui-components/react";
+import { PlusIcon } from "lucide-react";
+```
+
+```tsx
+<Button.Root>
+  <Button.Icon render={<PlusIcon />} />
+  Click me
+</Button.Root>
+```
+
+## Examples
+
+### Variants
+
+<ComponentPreview name="base-button-variants" />
+
+### Colors
+
+<ComponentPreview name="base-button-colors" />
+
+### Sizes
+
+<ComponentPreview name="base-button-sizes" />
+
+### Icons
+
+<ComponentPreview name="base-button-icons" />
+
+### Composition
+
+<ComponentPreview name="base-button-composition" />

@@ -1,6 +1,7 @@
 import { Alert } from "./alert";
 import { Anchor } from "./anchor";
 import { CodeBlock, Pre } from "./codeblock";
+import { ComponentPreview } from "./component-preview";
 import { Heading } from "./heading";
 import { Step, StepContent, StepDescription, StepTitle, Steps } from "./step";
 import { Tab, TabDescription, Tabs } from "./tab";
@@ -48,23 +49,17 @@ export const mdxComponents = {
 		<Heading as="h6" {...props} />
 	),
 
-	Tabs: (props: React.ComponentProps<typeof Tabs>) => <Tabs {...props} />,
-	Tab: (props: React.ComponentProps<typeof Tab>) => <Tab {...props} />,
-	TabDescription: (props: React.ComponentProps<typeof TabDescription>) => (
-		<TabDescription {...props} />
-	),
+	Tabs,
+	Tab,
+	TabDescription,
 
-	Steps: (props: React.ComponentProps<typeof Steps>) => <Steps {...props} />,
-	Step: (props: React.ComponentProps<typeof Step>) => <Step {...props} />,
-	StepTitle: (props: React.ComponentProps<typeof StepTitle>) => (
-		<StepTitle {...props} />
-	),
-	StepDescription: (props: React.ComponentProps<typeof StepDescription>) => (
-		<StepDescription {...props} />
-	),
-	StepContent: (props: React.ComponentProps<typeof StepContent>) => (
-		<StepContent {...props} />
-	),
+	Steps,
+	Step,
+	StepTitle,
+	StepDescription,
+	StepContent,
 
-	Alert: (props: React.ComponentProps<typeof Alert>) => <Alert {...props} />,
+	Alert,
+
+	ComponentPreview,
 };

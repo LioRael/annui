@@ -5,3 +5,9 @@ export type ButtonProps<Props = {}, State = {}> = useRender.ComponentProps<
 	State
 > &
 	Props;
+
+export type ButtonIconProps<Props = {}, State = {}> = useRender.ComponentProps<
+	"span",
+	State
+> &
+	Props;

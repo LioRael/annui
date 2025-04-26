@@ -1,7 +1,7 @@
 "use client";
 
 import { Select } from "@base-ui-components/react";
-import { Check, ChevronDown } from "lucide-react";
+import { CheckIcon, ChevronDownIcon } from "lucide-react";
 import { motion } from "motion/react";
 import { usePathname, useRouter } from "next/navigation";
 import React from "react";
@@ -47,7 +47,7 @@ export function CategorySelect() {
 			>
 				<span className="capitalize">{activeCategory}</span>
 				<Select.Icon>
-					<ChevronDown className="size-4 text-gray-400" />
+					<ChevronDownIcon className="size-4 text-gray-400" />
 				</Select.Icon>
 			</Select.Trigger>
 			<Select.Portal>
@@ -85,7 +85,7 @@ function SelectItem(props: React.ComponentProps<typeof Select.Item>) {
 		>
 			<Select.ItemText className="capitalize">{props.value}</Select.ItemText>
 			<Select.ItemIndicator>
-				<Check className="size-4" />
+				<CheckIcon className="size-4" />
 			</Select.ItemIndicator>
 		</Select.Item>
 	);

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-types",
+  "type": "registry:lib",
+  "description": "Types for button components",
+  "files": [
+    {
+      "path": "registry/default/buttons/types.ts",
+      "content": "import type { useRender } from \"@base-ui-components/react\";\n\nexport type ButtonProps<Props = {}, State = {}> = useRender.ComponentProps<\n\t\"button\",\n\tState\n> &\n\tProps;\n\nexport type ButtonIconProps<Props = {}, State = {}> = useRender.ComponentProps<\n\t\"span\",\n\tState\n> &\n\tProps;\n",
+      "type": "registry:lib"
+    }
+  ]
+}

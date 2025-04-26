@@ -1,7 +1,7 @@
 "use client";
 
 import { SiGithub } from "@icons-pack/react-simple-icons";
-import { Search } from "lucide-react";
+import { SearchIcon } from "lucide-react";
 import type React from "react";
 
 import { Dialog } from "@base-ui-components/react";
@@ -59,7 +59,7 @@ export function Header() {
 					</a>
 
 					<Link
-						href="https://github.com/tailwindlabs/tailwindcss"
+						href="https://github.com/annui-org/annui"
 						aria-label="GitHub repository"
 					>
 						<SiGithub className="size-5 fill-black/40 dark:fill-gray-400" />
@@ -71,7 +71,7 @@ export function Header() {
 						aria-label="Search"
 						className="inline-grid size-7 place-items-center rounded-md"
 					>
-						<Search className="size-4" />
+						<SearchIcon className="size-4" />
 					</button>
 
 					<Dialog.Root>
@@ -169,7 +169,7 @@ function SearchButton() {
 				type="button"
 				className="inline-flex items-center gap-1 rounded-full bg-gray-950/2 px-2 py-1 inset-ring inset-ring-gray-950/8 dark:bg-white/5 dark:inset-ring-white/2"
 			>
-				<Search className="-ml-0.5 size-4 text-gray-600 dark:text-gray-500" />
+				<SearchIcon className="-ml-0.5 size-4 text-gray-600 dark:text-gray-500" />
 				<kbd className="hidden font-sans text-xs/4 text-gray-500 dark:text-gray-400 [.os-macos_&]:block">
 					⌘K
 				</kbd>

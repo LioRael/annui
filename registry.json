@@ -7,7 +7,8 @@
       "type": "registry:theme",
       "dependencies": [
         "clsx",
-        "tailwind-merge"
+        "tailwind-merge",
+        "tailwind-variants"
       ],
       "files": [
         {
@@ -32,17 +33,19 @@
           "color-primary-800": "var(--color-purple-800)",
           "color-primary-900": "var(--color-purple-900)",
           "color-primary-950": "var(--color-purple-950)",
-          "color-gray-50": "var(--color-neutral-50)",
-          "color-gray-100": "var(--color-neutral-100)",
-          "color-gray-200": "var(--color-neutral-200)",
-          "color-gray-300": "var(--color-neutral-300)",
-          "color-gray-400": "var(--color-neutral-400)",
-          "color-gray-500": "var(--color-neutral-500)",
-          "color-gray-600": "var(--color-neutral-600)",
-          "color-gray-700": "var(--color-neutral-700)",
-          "color-gray-800": "var(--color-neutral-800)",
-          "color-gray-900": "var(--color-neutral-900)",
-          "color-gray-950": "var(--color-neutral-950)"
+          "color-default-0": "var(--color-neutral-0)",
+          "color-default-50": "var(--color-neutral-50)",
+          "color-default-100": "var(--color-neutral-100)",
+          "color-default-200": "var(--color-neutral-200)",
+          "color-default-300": "var(--color-neutral-300)",
+          "color-default-400": "var(--color-neutral-400)",
+          "color-default-500": "var(--color-neutral-500)",
+          "color-default-600": "var(--color-neutral-600)",
+          "color-default-700": "var(--color-neutral-700)",
+          "color-default-800": "var(--color-neutral-800)",
+          "color-default-900": "var(--color-neutral-900)",
+          "color-default-950": "var(--color-neutral-950)",
+          "color-default-1000": "var(--color-neutral-1000)"
         },
         "dark": {
           "color-primary-50": "var(--color-purple-950)",
@@ -56,17 +59,19 @@
           "color-primary-800": "var(--color-purple-200)",
           "color-primary-900": "var(--color-purple-100)",
           "color-primary-950": "var(--color-purple-50)",
-          "color-gray-50": "var(--color-neutral-950)",
-          "color-gray-100": "var(--color-neutral-900)",
-          "color-gray-200": "var(--color-neutral-800)",
-          "color-gray-300": "var(--color-neutral-700)",
-          "color-gray-400": "var(--color-neutral-600)",
-          "color-gray-500": "var(--color-neutral-500)",
-          "color-gray-600": "var(--color-neutral-400)",
-          "color-gray-700": "var(--color-neutral-300)",
-          "color-gray-800": "var(--color-neutral-200)",
-          "color-gray-900": "var(--color-neutral-100)",
-          "color-gray-950": "var(--color-neutral-50)"
+          "color-default-0": "var(--color-neutral-0)",
+          "color-default-50": "var(--color-neutral-50)",
+          "color-default-100": "var(--color-neutral-100)",
+          "color-default-200": "var(--color-neutral-200)",
+          "color-default-300": "var(--color-neutral-300)",
+          "color-default-400": "var(--color-neutral-600)",
+          "color-default-500": "var(--color-neutral-500)",
+          "color-default-600": "var(--color-neutral-400)",
+          "color-default-700": "var(--color-neutral-300)",
+          "color-default-800": "var(--color-neutral-200)",
+          "color-default-900": "var(--color-neutral-100)",
+          "color-default-950": "var(--color-neutral-50)",
+          "color-default-1000": "var(--color-neutral-0)"
         }
       }
     },
@@ -91,6 +96,168 @@
         {
           "path": "registry/lib/theme.tsx",
           "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "button-context",
+      "type": "registry:lib",
+      "description": "Context for button components",
+      "files": [
+        {
+          "path": "registry/default/buttons/context.tsx",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "button-types",
+      "type": "registry:lib",
+      "description": "Types for button components",
+      "files": [
+        {
+          "path": "registry/default/buttons/types.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "base-button",
+      "type": "registry:component",
+      "description": "A button component",
+      "registryDependencies": [
+        "button-context",
+        "button-types"
+      ],
+      "files": [
+        {
+          "path": "registry/default/buttons/base.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hover-expand-button",
+      "type": "registry:component",
+      "description": "A button component with hover expand",
+      "registryDependencies": [
+        "base-button",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/default/buttons/hover-expand-button.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "base-button-demo",
+      "type": "registry:example",
+      "files": [
+        {
+          "path": "registry/default/example/base-button-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "base-button-variants",
+      "type": "registry:example",
+      "files": [
+        {
+          "path": "registry/default/example/base-button-variants.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "base-button-colors",
+      "type": "registry:example",
+      "files": [
+        {
+          "path": "registry/default/example/base-button-colors.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "base-button-sizes",
+      "type": "registry:example",
+      "files": [
+        {
+          "path": "registry/default/example/base-button-sizes.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "base-button-icons",
+      "type": "registry:example",
+      "files": [
+        {
+          "path": "registry/default/example/base-button-icons.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "base-button-composition",
+      "type": "registry:example",
+      "files": [
+        {
+          "path": "registry/default/example/base-button-composition.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "hover-expand-button-demo",
+      "type": "registry:example",
+      "files": [
+        {
+          "path": "registry/default/example/hover-expand-button-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "hover-expand-button-variants",
+      "type": "registry:example",
+      "files": [
+        {
+          "path": "registry/default/example/hover-expand-button-variants.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "hover-expand-button-colors",
+      "type": "registry:example",
+      "files": [
+        {
+          "path": "registry/default/example/hover-expand-button-colors.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "hover-expand-button-sizes",
+      "type": "registry:example",
+      "files": [
+        {
+          "path": "registry/default/example/hover-expand-button-sizes.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "hover-expand-button-double-sided",
+      "type": "registry:example",
+      "files": [
+        {
+          "path": "registry/default/example/hover-expand-button-double-sided.tsx",
+          "type": "registry:example"
         }
       ]
     }

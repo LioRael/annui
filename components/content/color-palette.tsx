@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { tv } from "tailwind-variants";
 
 export function ColorPalette() {
 	return (
@@ -128,6 +128,30 @@ function ColorPaletteGroup({
 	);
 }
 
+const textColor = tv({
+	base: "text-default-0",
+	variants: {
+		level: {
+			0: "text-default-950",
+			50: "text-default-950",
+			100: "text-default-950",
+			200: "text-default-900",
+			300: "text-default-800",
+			400: "text-default-800",
+			500: "text-default-200",
+			600: "text-default-200",
+			700: "text-default-200",
+			800: "text-default-200",
+			900: "text-default-200",
+			950: "text-default-100",
+			1000: "text-default-50",
+		},
+	},
+	defaultVariants: {
+		level: 500,
+	},
+});
+
 export function ColorPaletteItem({
 	color,
 	label,
@@ -135,13 +159,26 @@ export function ColorPaletteItem({
 	color: string;
 	label: string;
 }) {
-	const isDark = Number.parseInt(label) >= 500;
+	const level = Number(label) as
+		| 50
+		| 100
+		| 200
+		| 300
+		| 400
+		| 500
+		| 600
+		| 700
+		| 800
+		| 900
+		| 950
+		| 1000;
+
 	return (
 		<div
 			className="size-24 rounded-2xl flex flex-col items-center justify-center border border-default-200"
 			style={{ backgroundColor: color }}
 		>
-			<p className={clsx(isDark && "text-white dark:text-black")}>{label}</p>
+			<p className={textColor({ level })}>{label}</p>
 		</div>
 	);
 }

@@ -1,4 +1,4 @@
-import { Link } from "lucide-react";
+import { LinkIcon } from "lucide-react";
 
 import { cn } from "@/lib/cn";
 
@@ -27,7 +27,7 @@ export function Heading<T extends Types = "h1">({
 			<a data-card="" href={`#${props.id}`} className="peer">
 				{props.children}
 			</a>
-			<Link
+			<LinkIcon
 				aria-label="Link to section"
 				className="text-fd-muted-foreground mt-0 size-3.5 shrink-0 opacity-0 transition-opacity peer-hover:opacity-100"
 			/>

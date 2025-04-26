@@ -5,17 +5,30 @@ import { rimraf } from "rimraf";
 import { type Registry, registryItemSchema } from "shadcn/registry";
 import { z } from "zod";
 
+import { examples } from "../registry/registry-examples";
 import { lib } from "../registry/registry-lib";
-import { style } from "../registry/registry-style";
+import { styles } from "../registry/registry-styles";
 import { ui } from "../registry/registry-ui";
-
 const DEPRECATED_ITEMS: string[] = [];
 
 const registry = {
 	name: "annui",
 	homepage: "https://annui.org",
 	items: z.array(registryItemSchema).parse(
-		[...style, ...lib, ...ui].filter((item) => {
+		[
+			{
+				name: "index",
+				type: "registry:style",
+				dependencies: ["tailwind-variants", "lucide-react"],
+				registryDependencies: ["cn", "theme", "context"],
+				cssVars: {},
+				files: [],
+			},
+			...styles,
+			...lib,
+			...ui,
+			...examples,
+		].filter((item) => {
 			return !DEPRECATED_ITEMS.includes(item.name);
 		}),
 	),
@@ -71,7 +84,7 @@ export const Index: Record<string, any> = {`;
 	}
 
 	index += `
-  }`;
+}`;
 
 	// Write style index.
 	rimraf.sync(path.join(process.cwd(), "__registry__/index.tsx"));

@@ -6,57 +6,77 @@ import {
 	useThemeContext,
 } from "@/registry/lib/theme";
 import { mergeProps, useRender } from "@base-ui-components/react";
-import { cva } from "class-variance-authority";
 import React from "react";
-import type { ButtonProps } from "./types";
+import { tv } from "tailwind-variants";
+import {
+	type ButtonColors,
+	ButtonContextProvider,
+	type ButtonSizes,
+	type ButtonVariants,
+	useButtonContext,
+} from "./context";
+import type { ButtonIconProps, ButtonProps } from "./types";
 
-const variants = cva(
-	[
-		"inline-flex items-center justify-center cursor-pointer rounded-md text-sm font-medium",
-		"disabled:pointer-events-none disabled:opacity-50",
-		"focus-visible:ring-(--button) focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
-		"transition-[color,background-color,border-color,outline-color,text-decoration-color,fill,stroke,box-shadow] duration-300",
-	],
-	{
-		variants: {
-			variant: {
-				filled: "bg-(--button) text-white hover:bg-(--button-hover)",
-				stroke:
-					"border border-(--button-stroke) text-(--button) hover:bg-(--button-lighter)",
-				lighter:
-					"bg-(--button-lighter) text-(--button) hover:bg-(--button-lighter-hover)",
-				ghost: "text-(--button) hover:bg-(--button-lighter)",
+const variants = tv({
+	slots: {
+		root: [
+			"inline-flex items-center justify-center cursor-pointer rounded-md text-sm font-medium",
+			"disabled:pointer-events-none disabled:opacity-50",
+			"focus-visible:ring-(--button) focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
+			"transition duration-200 ease-out",
+		],
+		icon: undefined,
+	},
+	variants: {
+		variant: {
+			filled: {
+				root: "bg-(--button) text-white hover:bg-(--button-hover)",
 			},
-			color: {
-				primary:
-					"[--button:var(--color-primary-600)] [--button-hover:var(--color-primary-700)] [--button-stroke:var(--color-primary-600)] [--button-lighter:var(--color-primary-50)] [--button-lighter-hover:var(--color-primary-100)]",
-				balance:
-					"[--button:var(--color-default-950)] [--button-hover:var(--color-default-800)] [--button-stroke:var(--color-default-600)] [--button-lighter:var(--color-default-50)] [--button-lighter-hover:var(--color-default-100)]",
-				success: "",
-				error: "",
-				warning: "",
+			stroke: {
+				root: "ring ring-inset ring-(--button-stroke) text-(--button) hover:bg-(--button-lighter)",
 			},
-			size: {
-				sm: "h-8 px-2",
-				md: "h-10 px-4",
-				lg: "h-12 px-6",
+			lighter: {
+				root: "bg-(--button-lighter) text-(--button) hover:bg-(--button-lighter-hover)",
+			},
+			ghost: {
+				root: "text-(--button) hover:bg-(--button-lighter)",
 			},
 		},
-		defaultVariants: {
-			variant: "filled",
-			size: "md",
-			color: "primary",
+		color: {
+			primary: {
+				root: "[--button:var(--color-primary-600)] [--button-hover:var(--color-primary-700)] [--button-stroke:var(--color-primary-600)] [--button-lighter:var(--color-primary-50)] [--button-lighter-hover:var(--color-primary-100)]",
+			},
+			default: {
+				root: "[--button:var(--color-default-950)] [--button-hover:var(--color-default-800)] [--button-stroke:var(--color-default-600)] [--button-lighter:var(--color-default-100)] [--button-lighter-hover:var(--color-default-200)]",
+			},
+		},
+		size: {
+			sm: {
+				root: "h-8 gap-1.5 rounded-lg px-2.5 text-sm",
+				icon: "-mx-1 size-4",
+			},
+			md: {
+				root: "h-9 gap-2 rounded-lg px-3 text-sm",
+				icon: "-mx-1 size-5",
+			},
+			lg: {
+				root: "h-10 gap-2.5 rounded-10 px-3.5 text-sm",
+				icon: "-mx-1 size-5",
+			},
 		},
 	},
-);
-
-type ButtonColors = "primary" | "balance" | "success" | "warning" | "error";
+	defaultVariants: {
+		variant: "filled",
+		size: "md",
+		color: "default",
+	},
+});
 
 function ButtonRoot(
 	props: ButtonProps<
 		{
-			variant?: "filled" | "stroke" | "lighter" | "ghost";
-			size?: "sm" | "md" | "lg";
+			variant?: ButtonVariants;
+			size?: ButtonSizes;
 		} & UseThemeOptions<ButtonColors>
 	>,
 ) {
@@ -64,10 +84,10 @@ function ButtonRoot(
 
 	const {
 		render = <button type="button" />,
-		theme = themeContext.theme,
-		color = themeContext.color,
-		variant,
-		size,
+		theme = themeContext.theme || "light",
+		color = themeContext.color || "default",
+		variant = "filled",
+		size = "md",
 		children,
 		className,
 		...otherProps
@@ -85,7 +105,8 @@ function ButtonRoot(
 				className: variants({
 					variant,
 					size,
-					color,
+					color: color === "default" ? "default" : "primary",
+				}).root({
 					className,
 				}),
 				children,
@@ -95,10 +116,37 @@ function ButtonRoot(
 		),
 	});
 
-	return renderElement();
+	const hasIcon = React.Children.toArray(children).some(
+		(child) => React.isValidElement(child) && child.type === ButtonIcon,
+	);
+
+	return hasIcon ? (
+		<ButtonContextProvider value={{ theme, color, variant, size }}>
+			{renderElement()}
+		</ButtonContextProvider>
+	) : (
+		renderElement()
+	);
 }
 
-function ButtonIcon() {}
+function ButtonIcon(props: ButtonIconProps) {
+	const { render = <span />, className, ...otherProps } = props;
+	const { size } = useButtonContext();
+
+	const { renderElement } = useRender({
+		render,
+		props: mergeProps<"span">({
+			className: variants({
+				size,
+			}).icon({
+				className,
+			}),
+			...otherProps,
+		}),
+	});
+
+	return renderElement();
+}
 
 export { variants as buttonVariants };
 

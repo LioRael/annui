@@ -4,7 +4,8 @@
   "type": "registry:theme",
   "dependencies": [
     "clsx",
-    "tailwind-merge"
+    "tailwind-merge",
+    "tailwind-variants"
   ],
   "files": [
     {
@@ -14,7 +15,7 @@
     },
     {
       "path": "registry/lib/theme.tsx",
-      "content": "\"use client\";\n\nimport { createContext, useContext } from \"react\";\n\nexport interface UseThemeOptions<Colors = string> {\n  theme?: \"light\" | \"dark\";\n  color?: Colors;\n}\n\nexport function useTheme(options: UseThemeOptions) {\n  return {\n    \"data-theme\": options.theme,\n    \"data-color\": options.color,\n  };\n}\n\nexport const ThemeContext = createContext<UseThemeOptions>({});\n\nexport function ThemeProvider({\n  children,\n  ...props\n}: React.PropsWithChildren<UseThemeOptions>) {\n  return (\n    <ThemeContext.Provider value={props}>{children}</ThemeContext.Provider>\n  );\n}\n\nexport function useThemeContext<Colors>() {\n  const context = useContext(ThemeContext);\n  if (context === undefined) {\n    throw new Error(\"useThemeContext must be used within a ThemeProvider\");\n  }\n  return context as UseThemeOptions<Colors>;\n}\n",
+      "content": "\"use client\";\n\nimport { createContext, useContext } from \"react\";\n\nexport interface UseThemeOptions<Colors = string> {\n\ttheme?: \"light\" | \"dark\";\n\tcolor?: Colors;\n}\n\nexport function useTheme(options: UseThemeOptions) {\n\treturn {\n\t\t\"data-theme\": options.theme,\n\t\t\"data-color\": options.color,\n\t};\n}\n\nexport const ThemeContext = createContext<UseThemeOptions>({});\n\nexport function ThemeProvider({\n\tchildren,\n\t...props\n}: React.PropsWithChildren<UseThemeOptions>) {\n\treturn (\n\t\t<ThemeContext.Provider value={props}>{children}</ThemeContext.Provider>\n\t);\n}\n\nexport function useThemeContext<Colors>() {\n\tconst context = useContext(ThemeContext);\n\tif (context === undefined) {\n\t\tthrow new Error(\"useThemeContext must be used within a ThemeProvider\");\n\t}\n\treturn context as UseThemeOptions<Colors>;\n}\n",
       "type": "registry:lib"
     }
   ],
@@ -31,17 +32,19 @@
       "color-primary-800": "var(--color-purple-800)",
       "color-primary-900": "var(--color-purple-900)",
       "color-primary-950": "var(--color-purple-950)",
-      "color-gray-50": "var(--color-neutral-50)",
-      "color-gray-100": "var(--color-neutral-100)",
-      "color-gray-200": "var(--color-neutral-200)",
-      "color-gray-300": "var(--color-neutral-300)",
-      "color-gray-400": "var(--color-neutral-400)",
-      "color-gray-500": "var(--color-neutral-500)",
-      "color-gray-600": "var(--color-neutral-600)",
-      "color-gray-700": "var(--color-neutral-700)",
-      "color-gray-800": "var(--color-neutral-800)",
-      "color-gray-900": "var(--color-neutral-900)",
-      "color-gray-950": "var(--color-neutral-950)"
+      "color-default-0": "var(--color-neutral-0)",
+      "color-default-50": "var(--color-neutral-50)",
+      "color-default-100": "var(--color-neutral-100)",
+      "color-default-200": "var(--color-neutral-200)",
+      "color-default-300": "var(--color-neutral-300)",
+      "color-default-400": "var(--color-neutral-400)",
+      "color-default-500": "var(--color-neutral-500)",
+      "color-default-600": "var(--color-neutral-600)",
+      "color-default-700": "var(--color-neutral-700)",
+      "color-default-800": "var(--color-neutral-800)",
+      "color-default-900": "var(--color-neutral-900)",
+      "color-default-950": "var(--color-neutral-950)",
+      "color-default-1000": "var(--color-neutral-1000)"
     },
     "dark": {
       "color-primary-50": "var(--color-purple-950)",
@@ -55,17 +58,19 @@
       "color-primary-800": "var(--color-purple-200)",
       "color-primary-900": "var(--color-purple-100)",
       "color-primary-950": "var(--color-purple-50)",
-      "color-gray-50": "var(--color-neutral-950)",
-      "color-gray-100": "var(--color-neutral-900)",
-      "color-gray-200": "var(--color-neutral-800)",
-      "color-gray-300": "var(--color-neutral-700)",
-      "color-gray-400": "var(--color-neutral-600)",
-      "color-gray-500": "var(--color-neutral-500)",
-      "color-gray-600": "var(--color-neutral-400)",
-      "color-gray-700": "var(--color-neutral-300)",
-      "color-gray-800": "var(--color-neutral-200)",
-      "color-gray-900": "var(--color-neutral-100)",
-      "color-gray-950": "var(--color-neutral-50)"
+      "color-default-0": "var(--color-neutral-0)",
+      "color-default-50": "var(--color-neutral-50)",
+      "color-default-100": "var(--color-neutral-100)",
+      "color-default-200": "var(--color-neutral-200)",
+      "color-default-300": "var(--color-neutral-300)",
+      "color-default-400": "var(--color-neutral-600)",
+      "color-default-500": "var(--color-neutral-500)",
+      "color-default-600": "var(--color-neutral-400)",
+      "color-default-700": "var(--color-neutral-300)",
+      "color-default-800": "var(--color-neutral-200)",
+      "color-default-900": "var(--color-neutral-100)",
+      "color-default-950": "var(--color-neutral-50)",
+      "color-default-1000": "var(--color-neutral-0)"
     }
   }
 }

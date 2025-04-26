@@ -2,5 +2,10 @@
 	"editor.defaultFormatter": "biomejs.biome",
 	"tailwindCSS.experimental.classRegex": [
 		["([\"'`][^\"'`]*.*?[\"'`])", "[\"'`]([^\"'`]*).*?[\"'`]"]
+	],
+	"typescript.preferences.autoImportFileExcludePatterns": [
+		"next/router",
+		"next/dist",
+		"^lucide-react/dist/lucide-react.suffixed$"
 	]
 }

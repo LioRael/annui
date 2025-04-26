@@ -1,0 +1,12 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "base-button-variants",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "registry/default/example/base-button-variants.tsx",
+      "content": "import { Button } from \"@/registry/default/buttons/base\";\n\nexport default function BaseButtonVariants() {\n\treturn (\n\t\t<div className=\"flex gap-4\">\n\t\t\t<Button.Root variant=\"filled\">Filled</Button.Root>\n\t\t\t<Button.Root variant=\"stroke\">Stroke</Button.Root>\n\t\t\t<Button.Root variant=\"lighter\">Lighter</Button.Root>\n\t\t\t<Button.Root variant=\"ghost\">Ghost</Button.Root>\n\t\t</div>\n\t);\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

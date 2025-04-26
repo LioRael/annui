@@ -22,4 +22,14 @@ export const lib: Registry["items"] = [
 			},
 		],
 	},
+	{
+		name: "context",
+		type: "registry:lib",
+		files: [
+			{
+				path: "registry/lib/context.tsx",
+				type: "registry:lib",
+			},
+		],
+	},
 ];
