@@ -1,0 +1,12 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "menu-a-colors",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "registry/default/example/menu-a-colors.tsx",
+      "content": "\"use client\";\n\nimport {\n\tChevronDownIcon,\n\tChevronRightIcon,\n\tHomeIcon,\n\tLogOutIcon,\n\tSettingsIcon,\n} from \"lucide-react\";\n\nimport { MenuA } from \"@/registry/default/menus/menu-a\";\nimport { Button } from \"@/registry/default/buttons/base\";\n\nexport function MenuAColors() {\n\treturn (\n\t\t<div className=\"flex gap-4\">\n\t\t\t<MenuAColor color=\"primary\" />\n\t\t\t<MenuAColor color=\"default\" />\n\t\t\t<MenuAColor color=\"error\" />\n\t\t\t<MenuAColor color=\"warning\" />\n\t\t\t<MenuAColor color=\"success\" />\n\t\t</div>\n\t);\n}\n\nfunction MenuAColor({\n\tcolor,\n}: { color: \"primary\" | \"default\" | \"error\" | \"warning\" | \"success\" }) {\n\treturn (\n\t\t<MenuA.Root>\n\t\t\t<MenuA.Trigger render={<Button.Root />}>\n\t\t\t\t<Button.Icon render={<ChevronDownIcon />} />\n\t\t\t\tOpen\n\t\t\t</MenuA.Trigger>\n\t\t\t<MenuA.Content color={color}>\n\t\t\t\t<MenuA.Item>\n\t\t\t\t\t<MenuA.ItemIcon>\n\t\t\t\t\t\t<HomeIcon />\n\t\t\t\t\t</MenuA.ItemIcon>\n\t\t\t\t\t<MenuA.ItemTitle>Home</MenuA.ItemTitle>\n\t\t\t\t\t<MenuA.ItemDescription>Home page</MenuA.ItemDescription>\n\t\t\t\t</MenuA.Item>\n\t\t\t\t<MenuA.Item>\n\t\t\t\t\t<MenuA.ItemIcon>\n\t\t\t\t\t\t<SettingsIcon />\n\t\t\t\t\t</MenuA.ItemIcon>\n\t\t\t\t\t<MenuA.ItemTitle>Settings</MenuA.ItemTitle>\n\t\t\t\t\t<MenuA.ItemDescription>Settings page</MenuA.ItemDescription>\n\t\t\t\t</MenuA.Item>\n\t\t\t\t<MenuA.Item>\n\t\t\t\t\t<MenuA.ItemIcon>\n\t\t\t\t\t\t<ChevronRightIcon />\n\t\t\t\t\t</MenuA.ItemIcon>\n\t\t\t\t\t<MenuA.ItemTitle>More</MenuA.ItemTitle>\n\t\t\t\t\t<MenuA.ItemDescription>More page</MenuA.ItemDescription>\n\t\t\t\t</MenuA.Item>\n\t\t\t\t<MenuA.Separator />\n\t\t\t\t<MenuA.Item>\n\t\t\t\t\t<MenuA.ItemIcon>\n\t\t\t\t\t\t<LogOutIcon />\n\t\t\t\t\t</MenuA.ItemIcon>\n\t\t\t\t\t<MenuA.ItemTitle>Logout</MenuA.ItemTitle>\n\t\t\t\t\t<MenuA.ItemDescription>Logout page</MenuA.ItemDescription>\n\t\t\t\t</MenuA.Item>\n\t\t\t</MenuA.Content>\n\t\t</MenuA.Root>\n\t);\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

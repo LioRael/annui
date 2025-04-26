@@ -111,4 +111,24 @@ export const defaultExamples: RegistryItem[] = [
 			},
 		],
 	},
+	{
+		name: "menu-a-demo",
+		type: "registry:example",
+		files: [
+			{
+				path: "registry/default/example/menu-a-demo.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "menu-a-colors",
+		type: "registry:example",
+		files: [
+			{
+				path: "registry/default/example/menu-a-colors.tsx",
+				type: "registry:example",
+			},
+		],
+	},
 ];

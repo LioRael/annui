@@ -160,6 +160,7 @@
 	--color-primary-950: var(--color-gray-950);
 }
 
+
 [data-color="error"] {
 	--color-primary-50: var(--color-error-50);
 	--color-primary-100: var(--color-error-100);

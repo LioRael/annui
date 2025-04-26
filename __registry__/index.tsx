@@ -6,6 +6,15 @@
 import * as React from "react"
 
 export const Index: Record<string, any> = {
+  "index": {
+    name: "index",
+    description: "",
+    type: "registry:style",
+    registryDependencies: ["cn","theme","context"],
+    files: [],
+    component: null,
+    meta: undefined,
+  },
   "default": {
     name: "default",
     description: "",
@@ -56,6 +65,40 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/lib/theme.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "context": {
+    name: "context",
+    description: "",
+    type: "registry:lib",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/lib/context.ts",
+      type: "registry:lib",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/lib/context.ts")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "resolve-classname": {
+    name: "resolve-classname",
+    description: "",
+    type: "registry:lib",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/lib/resolve-classname.ts",
+      type: "registry:lib",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/lib/resolve-classname.ts")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),
@@ -116,7 +159,7 @@ export const Index: Record<string, any> = {
     name: "hover-expand-button",
     description: "A button component with hover expand",
     type: "registry:component",
-    registryDependencies: ["base-button","motion"],
+    registryDependencies: ["base-button"],
     files: [{
       path: "registry/default/buttons/hover-expand-button.tsx",
       type: "registry:component",
@@ -124,6 +167,23 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/default/buttons/hover-expand-button.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "menu-a": {
+    name: "menu-a",
+    description: "A menu component",
+    type: "registry:component",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/menus/menu-a.tsx",
+      type: "registry:component",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/menus/menu-a.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),
@@ -311,6 +371,40 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/default/example/hover-expand-button-double-sided.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "menu-a-demo": {
+    name: "menu-a-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/example/menu-a-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/example/menu-a-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "menu-a-colors": {
+    name: "menu-a-colors",
+    description: "",
+    type: "registry:example",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/example/menu-a-colors.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/example/menu-a-colors.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),

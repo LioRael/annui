@@ -3,6 +3,21 @@
   "homepage": "https://annui.org",
   "items": [
     {
+      "name": "index",
+      "type": "registry:style",
+      "dependencies": [
+        "tailwind-variants",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "cn",
+        "theme",
+        "context"
+      ],
+      "files": [],
+      "cssVars": {}
+    },
+    {
       "name": "default",
       "type": "registry:theme",
       "dependencies": [
@@ -100,6 +115,26 @@
       ]
     },
     {
+      "name": "context",
+      "type": "registry:lib",
+      "files": [
+        {
+          "path": "registry/lib/context.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "resolve-classname",
+      "type": "registry:lib",
+      "files": [
+        {
+          "path": "registry/lib/resolve-classname.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
       "name": "button-context",
       "type": "registry:lib",
       "description": "Context for button components",
@@ -140,13 +175,26 @@
       "name": "hover-expand-button",
       "type": "registry:component",
       "description": "A button component with hover expand",
-      "registryDependencies": [
-        "base-button",
+      "dependencies": [
         "motion"
+      ],
+      "registryDependencies": [
+        "base-button"
       ],
       "files": [
         {
           "path": "registry/default/buttons/hover-expand-button.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "menu-a",
+      "type": "registry:component",
+      "description": "A menu component",
+      "files": [
+        {
+          "path": "registry/default/menus/menu-a.tsx",
           "type": "registry:component"
         }
       ]
@@ -257,6 +305,26 @@
       "files": [
         {
           "path": "registry/default/example/hover-expand-button-double-sided.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "menu-a-demo",
+      "type": "registry:example",
+      "files": [
+        {
+          "path": "registry/default/example/menu-a-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "menu-a-colors",
+      "type": "registry:example",
+      "files": [
+        {
+          "path": "registry/default/example/menu-a-colors.tsx",
           "type": "registry:example"
         }
       ]

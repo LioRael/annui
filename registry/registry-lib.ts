@@ -27,7 +27,17 @@ export const lib: Registry["items"] = [
 		type: "registry:lib",
 		files: [
 			{
-				path: "registry/lib/context.tsx",
+				path: "registry/lib/context.ts",
+				type: "registry:lib",
+			},
+		],
+	},
+	{
+		name: "resolve-classname",
+		type: "registry:lib",
+		files: [
+			{
+				path: "registry/lib/resolve-classname.ts",
 				type: "registry:lib",
 			},
 		],

@@ -3,9 +3,11 @@
   "name": "hover-expand-button",
   "type": "registry:component",
   "description": "A button component with hover expand",
-  "registryDependencies": [
-    "base-button",
+  "dependencies": [
     "motion"
+  ],
+  "registryDependencies": [
+    "base-button"
   ],
   "files": [
     {
